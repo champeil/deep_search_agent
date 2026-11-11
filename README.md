@@ -1,3 +1,4 @@
+![Deep Research Agent：全文优先、多源检索、引用可追溯](assets/readme-banner.png)
 # Deep Research Agent
 
 **在 Codex、Claude Code 或 ds-harness 中，用一句话启动多轮检索、证据核查和带引用的研究报告。**
