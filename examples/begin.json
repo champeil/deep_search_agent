@@ -1,0 +1,9 @@
+{
+  "question": "研究某个问题，优先原始来源并区分事实、推断和证据缺口",
+  "subquestions": [
+    {"id": "Q1", "question": "现有原始证据支持哪些结论？", "weight": 3},
+    {"id": "Q2", "question": "存在什么反证、冲突和适用范围限制？", "weight": 2},
+    {"id": "Q3", "question": "哪些问题仍无法回答？", "weight": 1}
+  ],
+  "mode": "research"
+}

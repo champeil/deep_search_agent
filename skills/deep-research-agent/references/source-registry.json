@@ -1,0 +1,717 @@
+{
+  "version": "2026-11-11",
+  "note": "Curated starting points, not exhaustive coverage or verified live access. Native API adapters exist only where explicitly named.",
+  "domains": {
+    "general": {
+      "label": "通用/跨学科",
+      "triggers": [
+        "综合",
+        "跨学科"
+      ],
+      "sources": [
+        "crossref",
+        "openalex",
+        "doaj"
+      ]
+    },
+    "biomed": {
+      "label": "生物医学",
+      "triggers": [
+        "肿瘤",
+        "内皮",
+        "细胞",
+        "癌",
+        "生物医学",
+        "血管",
+        "tumor",
+        "tumour",
+        "cancer",
+        "endothelial",
+        "angiogenesis",
+        "biomedical",
+        "immunology"
+      ],
+      "sources": [
+        "pubmed",
+        "europepmc",
+        "pmc",
+        "crossref"
+      ]
+    },
+    "omics": {
+      "label": "组学与生物数据",
+      "triggers": [
+        "单细胞",
+        "转录组",
+        "基因组",
+        "组学",
+        "scenic",
+        "monocle",
+        "single-cell",
+        "single cell",
+        "rnaseq",
+        "rna-seq",
+        "genomics",
+        "transcriptome",
+        "regulon"
+      ],
+      "sources": [
+        "geo",
+        "sra",
+        "ena",
+        "cellxgene"
+      ]
+    },
+    "clinical": {
+      "label": "临床与公共卫生",
+      "triggers": [
+        "临床",
+        "患者",
+        "治疗",
+        "药物",
+        "公共卫生",
+        "clinical",
+        "patient",
+        "therapy",
+        "treatment",
+        "trial",
+        "epidemiology"
+      ],
+      "sources": [
+        "clinicaltrials",
+        "pubmed",
+        "cochrane",
+        "who"
+      ]
+    },
+    "computing": {
+      "label": "计算机与人工智能",
+      "triggers": [
+        "人工智能",
+        "大模型",
+        "算法",
+        "软件",
+        "编程",
+        "机器学习",
+        "api",
+        "llm",
+        "agent",
+        "software",
+        "algorithm",
+        "machine learning",
+        "neural network",
+        "python"
+      ],
+      "sources": [
+        "arxiv",
+        "aclanthology",
+        "openreview",
+        "github"
+      ]
+    },
+    "engineering": {
+      "label": "工程与标准",
+      "triggers": [
+        "工程",
+        "材料",
+        "标准",
+        "电池",
+        "半导体",
+        "engineering",
+        "materials",
+        "battery",
+        "semiconductor",
+        "nist",
+        "iso"
+      ],
+      "sources": [
+        "ieee",
+        "acm",
+        "nist",
+        "iso"
+      ]
+    },
+    "economics": {
+      "label": "经济金融与商业",
+      "triggers": [
+        "经济",
+        "金融",
+        "通胀",
+        "股票",
+        "财报",
+        "公司",
+        "economics",
+        "inflation",
+        "finance",
+        "earnings",
+        "company",
+        "gdp"
+      ],
+      "sources": [
+        "worldbank",
+        "imf",
+        "oecd",
+        "sec"
+      ]
+    },
+    "policy": {
+      "label": "政策与法律",
+      "triggers": [
+        "法律",
+        "法规",
+        "政策",
+        "立法",
+        "监管",
+        "law",
+        "legal",
+        "regulation",
+        "policy",
+        "legislation"
+      ],
+      "sources": [
+        "eurlex",
+        "govcn",
+        "govuk"
+      ]
+    },
+    "environment": {
+      "label": "环境与地球科学",
+      "triggers": [
+        "环境",
+        "气候",
+        "碳排放",
+        "生态",
+        "海洋",
+        "农业",
+        "climate",
+        "environment",
+        "ecology",
+        "ocean",
+        "carbon emission",
+        "agriculture"
+      ],
+      "sources": [
+        "ipcc",
+        "noaa",
+        "nasa",
+        "fao"
+      ]
+    },
+    "social": {
+      "label": "社会科学与教育",
+      "triggers": [
+        "社会学",
+        "心理",
+        "教育",
+        "人口",
+        "社会科学",
+        "sociology",
+        "psychology",
+        "education",
+        "demography",
+        "social science"
+      ],
+      "sources": [
+        "osf",
+        "eric",
+        "oecd",
+        "crossref"
+      ]
+    },
+    "humanities": {
+      "label": "人文与历史",
+      "triggers": [
+        "历史",
+        "哲学",
+        "文学",
+        "艺术",
+        "人文",
+        "history",
+        "philosophy",
+        "literature",
+        "humanities",
+        "archaeology"
+      ],
+      "sources": [
+        "jstor",
+        "loc",
+        "doaj",
+        "crossref"
+      ]
+    }
+  },
+  "sources": {
+    "pubmed": {
+      "id": "pubmed",
+      "name": "PubMed",
+      "kind": "literature",
+      "homepage": "https://pubmed.ncbi.nlm.nih.gov/",
+      "match_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/"
+      ],
+      "adapter": "pubmed",
+      "note": "发现生物医学文献；EFetch 可返回摘要，非论文全文",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "europepmc": {
+      "id": "europepmc",
+      "name": "Europe PMC",
+      "kind": "literature",
+      "homepage": "https://europepmc.org/",
+      "match_urls": [
+        "https://europepmc.org/"
+      ],
+      "adapter": "europepmc",
+      "note": "文献发现、摘要与全文链接；预印本与期刊论文需区分",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "pmc": {
+      "id": "pmc",
+      "name": "PubMed Central",
+      "kind": "fulltext",
+      "homepage": "https://pmc.ncbi.nlm.nih.gov/",
+      "match_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/",
+        "https://www.ncbi.nlm.nih.gov/pmc/"
+      ],
+      "adapter": null,
+      "note": "可访问论文全文，仍须检查版本、补充材料与读取范围",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "crossref": {
+      "id": "crossref",
+      "name": "Crossref",
+      "kind": "metadata",
+      "homepage": "https://www.crossref.org/",
+      "match_urls": [
+        "https://www.crossref.org/",
+        "https://api.crossref.org/"
+      ],
+      "adapter": "crossref",
+      "note": "跨学科 DOI/文献元数据，不是全文库或内容可信度认证",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "openalex": {
+      "id": "openalex",
+      "name": "OpenAlex",
+      "kind": "metadata",
+      "homepage": "https://openalex.org/",
+      "match_urls": [
+        "https://openalex.org/"
+      ],
+      "adapter": null,
+      "note": "跨学科学术发现；本版无专用客户端",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "doaj": {
+      "id": "doaj",
+      "name": "DOAJ",
+      "kind": "literature",
+      "homepage": "https://doaj.org/",
+      "match_urls": [
+        "https://doaj.org/"
+      ],
+      "adapter": null,
+      "note": "开放获取期刊与文章发现",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "geo": {
+      "id": "geo",
+      "name": "GEO",
+      "kind": "dataset",
+      "homepage": "https://www.ncbi.nlm.nih.gov/geo/",
+      "match_urls": [
+        "https://www.ncbi.nlm.nih.gov/geo/"
+      ],
+      "adapter": null,
+      "note": "基因表达数据与实验元数据",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "sra": {
+      "id": "sra",
+      "name": "SRA",
+      "kind": "dataset",
+      "homepage": "https://www.ncbi.nlm.nih.gov/sra/",
+      "match_urls": [
+        "https://www.ncbi.nlm.nih.gov/sra/"
+      ],
+      "adapter": null,
+      "note": "测序数据记录；不自动下载或分析数据",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "ena": {
+      "id": "ena",
+      "name": "ENA",
+      "kind": "dataset",
+      "homepage": "https://www.ebi.ac.uk/ena/browser/",
+      "match_urls": [
+        "https://www.ebi.ac.uk/ena/"
+      ],
+      "adapter": null,
+      "note": "核酸序列与测序数据记录",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "cellxgene": {
+      "id": "cellxgene",
+      "name": "CELLxGENE Discover",
+      "kind": "dataset",
+      "homepage": "https://cellxgene.cziscience.com/",
+      "match_urls": [
+        "https://cellxgene.cziscience.com/"
+      ],
+      "adapter": null,
+      "note": "单细胞数据发现；平台页面不代替原始论文",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "clinicaltrials": {
+      "id": "clinicaltrials",
+      "name": "ClinicalTrials.gov",
+      "kind": "registry",
+      "homepage": "https://clinicaltrials.gov/",
+      "match_urls": [
+        "https://clinicaltrials.gov/"
+      ],
+      "adapter": null,
+      "note": "临床试验登记；登记不等于试验结果或疗效证据",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "cochrane": {
+      "id": "cochrane",
+      "name": "Cochrane Library",
+      "kind": "review",
+      "homepage": "https://www.cochranelibrary.com/",
+      "match_urls": [
+        "https://www.cochranelibrary.com/"
+      ],
+      "adapter": null,
+      "note": "系统综述，部分全文需要订阅",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "who": {
+      "id": "who",
+      "name": "WHO",
+      "kind": "official",
+      "homepage": "https://www.who.int/",
+      "match_urls": [
+        "https://www.who.int/"
+      ],
+      "adapter": null,
+      "note": "公共卫生官方资料；核对适用地区和日期",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "arxiv": {
+      "id": "arxiv",
+      "name": "arXiv",
+      "kind": "preprint",
+      "homepage": "https://arxiv.org/",
+      "match_urls": [
+        "https://arxiv.org/"
+      ],
+      "adapter": null,
+      "note": "预印本与版本记录，不能默认已同行评审",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "aclanthology": {
+      "id": "aclanthology",
+      "name": "ACL Anthology",
+      "kind": "literature",
+      "homepage": "https://aclanthology.org/",
+      "match_urls": [
+        "https://aclanthology.org/"
+      ],
+      "adapter": null,
+      "note": "语言与计算研究论文，核对论文类型",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "openreview": {
+      "id": "openreview",
+      "name": "OpenReview",
+      "kind": "review_platform",
+      "homepage": "https://openreview.net/",
+      "match_urls": [
+        "https://openreview.net/"
+      ],
+      "adapter": null,
+      "note": "投稿、评审与决定；核对接收状态",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "github": {
+      "id": "github",
+      "name": "GitHub",
+      "kind": "code",
+      "homepage": "https://github.com/",
+      "match_urls": [
+        "https://github.com/"
+      ],
+      "adapter": null,
+      "note": "公开源码与问题记录；核对官方所有者、版本与许可证",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "ieee": {
+      "id": "ieee",
+      "name": "IEEE Xplore",
+      "kind": "literature",
+      "homepage": "https://ieeexplore.ieee.org/",
+      "match_urls": [
+        "https://ieeexplore.ieee.org/"
+      ],
+      "adapter": null,
+      "note": "工程文献，部分需要订阅",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "acm": {
+      "id": "acm",
+      "name": "ACM Digital Library",
+      "kind": "literature",
+      "homepage": "https://dl.acm.org/",
+      "match_urls": [
+        "https://dl.acm.org/"
+      ],
+      "adapter": null,
+      "note": "计算机文献；核对文章和会议版本",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "nist": {
+      "id": "nist",
+      "name": "NIST",
+      "kind": "official",
+      "homepage": "https://www.nist.gov/",
+      "match_urls": [
+        "https://www.nist.gov/"
+      ],
+      "adapter": null,
+      "note": "技术标准与测量资料，核对版本",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "iso": {
+      "id": "iso",
+      "name": "ISO",
+      "kind": "standard",
+      "homepage": "https://www.iso.org/",
+      "match_urls": [
+        "https://www.iso.org/"
+      ],
+      "adapter": null,
+      "note": "标准目录与版本，许多标准正文需购买",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "worldbank": {
+      "id": "worldbank",
+      "name": "World Bank Data",
+      "kind": "dataset",
+      "homepage": "https://data.worldbank.org/",
+      "match_urls": [
+        "https://data.worldbank.org/"
+      ],
+      "adapter": null,
+      "note": "跨国指标；核对定义、年份与修订",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "imf": {
+      "id": "imf",
+      "name": "IMF",
+      "kind": "official",
+      "homepage": "https://www.imf.org/",
+      "match_urls": [
+        "https://www.imf.org/"
+      ],
+      "adapter": null,
+      "note": "经济研究与统计，核对系列及版本",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "oecd": {
+      "id": "oecd",
+      "name": "OECD",
+      "kind": "official",
+      "homepage": "https://www.oecd.org/",
+      "match_urls": [
+        "https://www.oecd.org/"
+      ],
+      "adapter": null,
+      "note": "政策研究与统计，核对国家与指标口径",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "sec": {
+      "id": "sec",
+      "name": "SEC EDGAR",
+      "kind": "filing",
+      "homepage": "https://www.sec.gov/edgar/",
+      "match_urls": [
+        "https://www.sec.gov/"
+      ],
+      "adapter": null,
+      "note": "美国证券申报；不覆盖全球全部企业",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "eurlex": {
+      "id": "eurlex",
+      "name": "EUR-Lex",
+      "kind": "law",
+      "homepage": "https://eur-lex.europa.eu/",
+      "match_urls": [
+        "https://eur-lex.europa.eu/"
+      ],
+      "adapter": null,
+      "note": "欧盟法律，须核对管辖范围和生效版本",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "govcn": {
+      "id": "govcn",
+      "name": "中国政府网",
+      "kind": "official",
+      "homepage": "https://www.gov.cn/",
+      "match_urls": [
+        "https://www.gov.cn/"
+      ],
+      "adapter": null,
+      "note": "中国中央政府政策；地方及专业部门需补充",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "govuk": {
+      "id": "govuk",
+      "name": "GOV.UK",
+      "kind": "official",
+      "homepage": "https://www.gov.uk/",
+      "match_urls": [
+        "https://www.gov.uk/"
+      ],
+      "adapter": null,
+      "note": "英国政府资料；不能代替其他管辖区资料",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "ipcc": {
+      "id": "ipcc",
+      "name": "IPCC",
+      "kind": "assessment",
+      "homepage": "https://www.ipcc.ch/",
+      "match_urls": [
+        "https://www.ipcc.ch/"
+      ],
+      "adapter": null,
+      "note": "气候评估；追溯章节引用和原始研究",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "noaa": {
+      "id": "noaa",
+      "name": "NOAA",
+      "kind": "dataset",
+      "homepage": "https://www.noaa.gov/",
+      "match_urls": [
+        "https://www.noaa.gov/",
+        "https://www.ncei.noaa.gov/"
+      ],
+      "adapter": null,
+      "note": "气象海洋资料；核对数据产品",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "nasa": {
+      "id": "nasa",
+      "name": "NASA",
+      "kind": "official",
+      "homepage": "https://www.nasa.gov/",
+      "match_urls": [
+        "https://www.nasa.gov/",
+        "https://earthdata.nasa.gov/"
+      ],
+      "adapter": null,
+      "note": "空间与地球观测资料，核对具体数据产品",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "fao": {
+      "id": "fao",
+      "name": "FAO",
+      "kind": "official",
+      "homepage": "https://www.fao.org/",
+      "match_urls": [
+        "https://www.fao.org/"
+      ],
+      "adapter": null,
+      "note": "农业与粮食资料，核对统计定义和覆盖",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "osf": {
+      "id": "osf",
+      "name": "OSF",
+      "kind": "repository",
+      "homepage": "https://osf.io/",
+      "match_urls": [
+        "https://osf.io/"
+      ],
+      "adapter": null,
+      "note": "预注册、项目和预印本；核对记录类别",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "eric": {
+      "id": "eric",
+      "name": "ERIC",
+      "kind": "literature",
+      "homepage": "https://eric.ed.gov/",
+      "match_urls": [
+        "https://eric.ed.gov/"
+      ],
+      "adapter": null,
+      "note": "教育研究文献发现",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "jstor": {
+      "id": "jstor",
+      "name": "JSTOR",
+      "kind": "literature",
+      "homepage": "https://www.jstor.org/",
+      "match_urls": [
+        "https://www.jstor.org/"
+      ],
+      "adapter": null,
+      "note": "人文社会科学资料，部分需订阅",
+      "registration": "curated",
+      "live_access": "not_tested"
+    },
+    "loc": {
+      "id": "loc",
+      "name": "Library of Congress",
+      "kind": "archive",
+      "homepage": "https://www.loc.gov/",
+      "match_urls": [
+        "https://www.loc.gov/"
+      ],
+      "adapter": null,
+      "note": "历史馆藏与原始文献；存在地域与馆藏边界",
+      "registration": "curated",
+      "live_access": "not_tested"
+    }
+  }
+}

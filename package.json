@@ -1,0 +1,76 @@
+{
+  "name": "dsh-deep-research-agent",
+  "version": "0.6.0",
+  "description": "DeepSeek Harness research workflow with native-first retrieval, full-text-first reading and traceable citations. 深度研究与证据审阅。",
+  "type": "module",
+  "main": "./dsh/index.mjs",
+  "exports": {
+    ".": "./dsh/index.mjs",
+    "./settings": "./dsh/settings.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dsh/",
+    "skills/deep-research-agent/SKILL.md",
+    "skills/deep-research-agent/agents/",
+    "skills/deep-research-agent/assets/",
+    "skills/deep-research-agent/references/",
+    "skills/deep-research-agent/scripts/*.py",
+    "examples/research.env.example",
+    "README.md",
+    "NOTICE.md",
+    "DSH_PUBLISHING.md"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "deep-research",
+    "citations",
+    "research-agent"
+  ],
+  "engines": {
+    "node": ">=24.9.0",
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./dsh/cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "~3.19.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.1.0",
+    "@deepseek-ai/dsh-mcp-client": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-skill-filesystem": "0.2.2-rc.1"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "~4.1.0",
+    "@deepseek-ai/dsh-mcp-client": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-skill-filesystem": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-skill": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-tools": "0.2.2-rc.1",
+    "yaml": "^2.8.1"
+  },
+  "scripts": {
+    "test": "node --test tests/dsh/*.test.mjs",
+    "check:plugin": "node scripts/check_dsh_plugin.mjs",
+    "pack:check": "npm pack --dry-run --json",
+    "test:bridge": "node scripts/test_dsh_bridge.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/champeil/deep_search_agent.git"
+  },
+  "homepage": "https://github.com/champeil/deep_search_agent#readme",
+  "bugs": {
+    "url": "https://github.com/champeil/deep_search_agent/issues"
+  },
+  "author": {
+    "name": "champeil",
+    "url": "https://github.com/champeil"
+  }
+}

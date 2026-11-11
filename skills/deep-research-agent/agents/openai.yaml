@@ -1,0 +1,13 @@
+interface:
+  display_name: 深度研究 Agent
+  short_description: 在当前模型会话内开展多轮检索并生成可追溯引用的研究报告
+  default_prompt: 使用 $deep-research-agent 深度研究这个问题，核对原文并给出带引用的报告。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

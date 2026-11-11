@@ -1,0 +1,7 @@
+# Install a layer; never replace the user's profile or model configuration.
+- insert:
+    - id: deep-research-agent
+      name: dsh-deep-research-agent
+      config:
+        serverName: deep_research
+        toolCallTimeoutMs: 120000
