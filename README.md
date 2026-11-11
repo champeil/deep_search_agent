@@ -1,5 +1,5 @@
 
-![Deep Research Agent：全文优先、多源检索、引用可追溯](assets/readme-banner.png)
+![Deep Research Agent：全文优先、多源检索、引用可追溯](https://github.com/champeil/deep_search_agent/blob/main/assets/readme-banner.png?raw=true)
 
 # Deep Research Agent
 
